@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  
   def index
 
   end
@@ -10,7 +11,7 @@ class AnimalsController < ApplicationController
   def new
 
   end
-  
+
   def create
 
   end
