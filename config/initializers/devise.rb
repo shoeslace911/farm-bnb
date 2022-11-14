@@ -14,11 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-<<<<<<< HEAD
   # config.secret_key = '210e3ee944a7ddd80f5d3027bb3d54c46bd7608e90406994cceaaa47a63fccf54978958897ce4172dd7bca2feaffc924e6af18f36a1d32714ace577669c9c6f1'
-=======
-  # config.secret_key = '861976d76c0c82240f1574cc9ba090a5d1973951c2d4b20616a9c651c7bf74d9e549f580a4d440bd36923d6eecc6fd622057a28b8ac93508320393f455e0b115'
->>>>>>> 8fada36abfcaad816b805eb69be621a9dba19d99
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -28,11 +24,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-<<<<<<< HEAD
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-=======
+
   config.mailer_sender = 'shofujiwara505@gmail.com'
->>>>>>> 8fada36abfcaad816b805eb69be621a9dba19d99
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -133,12 +126,9 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 12
 
-  # Set up a pepper to generate the hashed password.
-<<<<<<< HEAD
+  # Set up a pepper to generate the hashed password.``
   # config.pepper = 'f382622fd236dffe39135f9e0fc472f8995900b3ac2a7313093bfe34a2bdb65bd5e69db6b00e39d782f981e8f73a1ee27151504cc5ce20b0d0f39530050f1e3b'
-=======
-  # config.pepper = '902b852b844d2c53be94e26030cd390abef0712a3aca601d2a04d72712bcb1148e7d1ee53bbb8823482e6e3259f230fa92b33a7a542380d4a3a18715079ced03'
->>>>>>> 8fada36abfcaad816b805eb69be621a9dba19d99
+
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
