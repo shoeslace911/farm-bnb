@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  enum status: [:accepted, :rejected, :pending]
   belongs_to :user
   belongs_to :animal
 
