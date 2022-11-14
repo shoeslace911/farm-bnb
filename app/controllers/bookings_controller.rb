@@ -1,13 +1,18 @@
 class BookingsController < ApplicationController
-def index
+  def index
 
-end
-def create
+  end
 
-end
+  def create
 
-def edit
+  end
 
-end
+  def edit
+
+  end
+
+  def update
+    
+  end
 
 end

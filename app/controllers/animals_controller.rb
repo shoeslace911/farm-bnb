@@ -2,7 +2,7 @@ class AnimalsController < ApplicationController
   def index
 
   end
-  
+
   def show
 
   end
@@ -10,5 +10,8 @@ class AnimalsController < ApplicationController
   def new
 
   end
+  
+  def create
 
+  end
 end
