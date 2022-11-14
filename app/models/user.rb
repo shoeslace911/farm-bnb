@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :bookings # as client
+  has_many :bookings, dependent: :destroy # as client
   has_many :owned_animals, class_name: 'Animal' # as owner
   has_many :rented_animals, through: :bookings, source: :animal
    # rented animals
@@ -8,5 +8,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, uniqueness: true, presence: true
-
 end
