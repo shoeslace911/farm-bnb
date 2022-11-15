@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80);">
+  <div class="container">
+    <h1><%= current_user.email.capitalize %>'s current bookings</h1>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="cards">
+  <% @bookings.each do |booking|  %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + booking.animal.species %> )">
+    <div class="card-details">
+    <h1><%= link_to booking.animal.name,  booking_path(booking), class: "links"%></h1>
+  <div class="card-info">
+    <h3><%= booking.status %></h3>
+    <h6>From:<%= booking.start_date %> To:<%= booking.end_date %></h6>
+    </div>
+  </div>
+  </div>
+  <% end %>
+ </div>
