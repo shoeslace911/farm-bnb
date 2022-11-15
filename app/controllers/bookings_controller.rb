@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
+
   def index
-    @bookings = current_user.bookings
+    @bookings = policy_scope(Booking)
+  end
+
+  def new
+
   end
 
   def create
@@ -21,5 +26,3 @@ def policy_scope
 
 end
 end
-
-
