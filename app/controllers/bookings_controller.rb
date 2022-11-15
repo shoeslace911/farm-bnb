@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def create
 
+    authorize @booking
   end
 
   def edit
@@ -21,5 +22,3 @@ def policy_scope
 
 end
 end
-
-
