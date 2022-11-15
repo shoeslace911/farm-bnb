@@ -1,9 +1,9 @@
 class Animal < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :price, presence: true
   validates :species, presence: true
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
 
 end
