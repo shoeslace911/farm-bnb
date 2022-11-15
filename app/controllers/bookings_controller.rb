@@ -4,8 +4,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     authorize @booking
+
   end
 
   def edit
