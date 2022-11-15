@@ -1,0 +1,10 @@
+<h1><strong><%= @animal.name %></strong></h1>
+<h3><%= @animal.species %></h3>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+    <% @animals.each do |animal| %>
+    <%= animal.photo %>
+    <% end %>
+  </div>
+</div>
