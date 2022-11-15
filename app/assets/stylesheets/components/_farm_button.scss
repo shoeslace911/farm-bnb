@@ -1,0 +1,14 @@
+.farm-button {
+  color: #5BAC29;
+  border: 1px solid #5BAC29;
+  border-radius: 40px;
+  background-color: rgb(240, 240, 240);
+  text-decoration: none;
+  padding: 16px 24px;
+  transition: 0.5s;
+
+  &:hover {
+    color: rgb(240, 240, 240);
+    background-color: #5BAC29;
+  }
+}
