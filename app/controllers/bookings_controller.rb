@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-
+    @bookings = current_user.bookings
   end
 
   def create
@@ -12,7 +12,14 @@ class BookingsController < ApplicationController
   end
 
   def update
-    
+
   end
 
+private
+
+def policy_scope
+
 end
+end
+
+
