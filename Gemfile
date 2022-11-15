@@ -57,6 +57,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "devise"
   gem 'faker'
+  gem "pundit"
 
 end
 
