@@ -12,10 +12,9 @@
 <div class="card-details">
 <h1><%= link_to animal.name,  animal_path(animal), class: "links"%></h1>
 <div class="card-info">
-  <p><%= animal.species %>:￥<%= animal.price %></p>
+  <h4><%= animal.species.capitalize %>:￥<%= animal.price %> per day</h4>
   </div>
  </div>
  </div>
-
 <% end %>
 </div>
