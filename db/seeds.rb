@@ -14,13 +14,10 @@ def end_date(start_date)
   Faker::Date.between(from: start_date.to_s, to: "2022-12-31")
 end
 
-users = User.all
-animals = Animal.all
-
 puts "Destroying previous seed for: User, Booking and Animal"
 User.destroy_all
-Booking.destroy_all
-Animal.destroy_all
+# Booking.destroy_all
+# Animal.destroy_all
 
 puts "Creating seeds for: User, Booking and Animal"
 
@@ -29,15 +26,29 @@ puts "Creating seeds for: User, Booking and Animal"
 end
 
 10.times do
-  Animal.create!(species: Faker::Creature::Animal.name, name: Faker::GreekPhilosophers.name, price: rand(5000..20_000))
+  users = User.all
+  Animal.create!(
+    species: Faker::Creature::Animal.name,
+    name: Faker::GreekPhilosophers.name,
+    price: rand(5000..20_000),
+    user: users.sample
+  )
 end
 
 10.times do
   first_date = start_date
   last_date = end_date(first_date)
-  Booking.create(status: :pending, start_date: first_date, end_date: last_date, user: users.sample, animal: animals.sample)
+  animal = Animal.all.sample
+  renter = User.where.not(id: animal.user).sample
+  Booking.create!(
+    status: :pending,
+    start_date: first_date,
+    end_date: last_date,
+    user: renter,
+    animal: animal
+  )
 end
 
 puts "Created #{User.count} users."
-puts "Created #{Booking.count} bookings."
 puts "Created #{Animal.count} animals."
+puts "Created #{Booking.count} bookings."
