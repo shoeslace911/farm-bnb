@@ -1,10 +1,11 @@
-<h1><strong><%= @animal.name %></strong></h1>
-<h3><%= @animal.species %></h3>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    <% @animals.each do |animal| %>
-    <%= animal.photo %>
-    <% end %>
+<div class="container d-flex">
+  <div class="left-section">
+    <h1 class="text-center"><strong><%= @animal.name %></strong></h1>
+    <h3 class="text-center"><%= @animal.species %></h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime explicabo non minima laboriosam quam ipsam, ab accusantium aliquid eaque? Alias quibusdam blanditiis incidunt, adipisci impedit ex nulla dolores magni accusantium?</p>
+  </div>
+  <div class="right-section">
+      <%= image_tag "https://source.unsplash.com/featured?#{@animal.species}", alt: "text", width: "300px" %>
+      <%= render "bookings/form" %>
   </div>
 </div>

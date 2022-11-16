@@ -1,0 +1,31 @@
+.custom-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://modernfarmer.com/wp-content/uploads/2014/09/innercowhero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .custom-banner-heading {
+    font-family: 'Raleway', sans-serif;;
+    font-weight: medium;
+    font-size: 40px;
+    color: white;
+  }
+
+  .custom-banner-paragraph {
+    font-family: 'Roboto', sans-serif;
+    font-weight: regular;
+    font-size: 18px;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .custom-banner-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
