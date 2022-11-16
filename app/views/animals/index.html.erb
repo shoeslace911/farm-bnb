@@ -1,11 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80);">
-  <div class="container">
-    <h1>Friendship Farms!</h1>
-    <p>Please take a look at our wonderful animals</p>
-  </div>
+<div class="container mt-2">
+<h2>Animals</h2>
 </div>
-
-<div class="container mt-5">
+<div class="container mt-2">
   <div class="cards">
     <% @animals.each do |animal|  %>
       <%= link_to animal_path(animal), class: "links" do %>
