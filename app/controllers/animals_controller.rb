@@ -15,6 +15,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
     @booking = Booking.new
     authorize @animal
+    @markers = [@animal.geocode.first, @animal.geocode.last]
   end
 
   def new
