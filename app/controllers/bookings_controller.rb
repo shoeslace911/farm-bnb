@@ -8,9 +8,16 @@ class BookingsController < ApplicationController
 
   end
 
-  def create
+  # def create
 
-  end
+  # @booking = Booking.new(booking_params)
+  # @booking.animal = @animal
+  # if @booking.save
+  #   redirect_to
+  # else
+  #   render :new, status: :unprocessible_entity
+  # end
+  # end
 
   def edit
 
@@ -22,7 +29,8 @@ class BookingsController < ApplicationController
 
 private
 
-def policy_scope
+# def booking_params
+#   params.require(:booking).permit(:)
+# end
 
-end
 end

@@ -31,7 +31,8 @@ end
     species: Faker::Creature::Animal.name,
     name: Faker::GreekPhilosophers.name,
     price: rand(5000..20_000),
-    user: users.sample
+    user: users.sample,
+    address: Faker::Address.country
   )
 end
 
