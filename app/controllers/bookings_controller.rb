@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = policy_scope(Booking)
   end
@@ -7,10 +6,10 @@ class BookingsController < ApplicationController
   def create
     @animal = Animal.find(params[:animal_id])
     @booking = Booking.new(booking_params)
-    authorize @booking
     @booking.animal = @animal
     @booking.user = current_user
     @booking.status = 2
+    authorize @booking
     if @booking.save
       redirect_to bookings_path
     else
@@ -18,18 +17,12 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
   def update
-
   end
 
-private
+  private
 
-def booking_params
-  params.require(:booking).permit( :start_date, :end_date )
-end
-
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
 end
