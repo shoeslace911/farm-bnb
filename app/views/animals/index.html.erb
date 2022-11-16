@@ -14,13 +14,15 @@
 <div class="container mt-5">
 <div class="cards">
 <% @animals.each do |animal|  %>
+<%= link_to animal_path(animal), class: "links" do %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + animal.species %>)">
 <div class="card-details">
-<h1><%= link_to animal.name,  animal_path(animal), class: "links"%></h1>
+<h1><%= animal.name %></h1>
 <div class="card-info">
   <h4>￥<%= animal.price %> per day</h4>
   </div>
  </div>
  </div>
+  <% end %>
 <% end %>
 </div>
