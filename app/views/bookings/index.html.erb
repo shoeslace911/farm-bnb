@@ -11,7 +11,7 @@
     <div class="card-details">
     <h1><%= link_to booking.animal.name,  booking_path(booking), class: "links"%></h1>
   <div class="card-info">
-    <h3><%= booking.status %></h3>
+    <h3 class = "status-<%= booking.status %>"><%= booking.status %></h3>
     <h6>From:<%= booking.start_date %> To:<%= booking.end_date %></h6>
     </div>
   </div>
