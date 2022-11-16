@@ -25,10 +25,11 @@ puts "Creating seeds for: User, Booking and Animal"
   User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 123456 )
 end
 
-10.times do
+20.times do
   users = User.all
+  animals = ['Cow', 'Chicken', 'Pig', 'Sheep', 'Horse', 'Rabbit', 'Dog', 'Goat', 'Crocodile']
   Animal.create!(
-    species: Faker::Creature::Animal.name,
+    species: animals.sample,
     name: Faker::GreekPhilosophers.name,
     price: rand(5000..20_000),
     user: users.sample,
@@ -36,13 +37,13 @@ end
   )
 end
 
-10.times do
+20.times do
   first_date = start_date
   last_date = end_date(first_date)
   animal = Animal.all.sample
   renter = User.where.not(id: animal.user).sample
   Booking.create!(
-    status: :pending,
+    status: Booking.statuses.keys.sample,
     start_date: first_date,
     end_date: last_date,
     user: renter,
