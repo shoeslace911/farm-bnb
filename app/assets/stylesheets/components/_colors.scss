@@ -1,11 +1,11 @@
-.status-pending {
-  color: orange
+#status-pending {
+  border: solid 3px rgb(236, 163, 8);
 }
 
-.status-accepted {
-  color: green
+#status-accepted {
+  border: solid 3px rgb(9, 251, 9);
 }
 
-.status-rejected {
-  color: red
+#status-rejected {
+  border: solid 3px rgba(217, 4, 4, 0.848);
 }
