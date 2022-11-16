@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -28,13 +29,17 @@ end
 20.times do
   users = User.all
   animals = ['Cow', 'Chicken', 'Pig', 'Sheep', 'Horse', 'Rabbit', 'Dog', 'Goat', 'Crocodile']
-  Animal.create!(
+  animal = Animal.new(
     species: animals.sample,
     name: Faker::GreekPhilosophers.name,
     price: rand(5000..20_000),
     user: users.sample,
     address: Faker::Address.country
   )
+  file = URI.open("https://source.unsplash.com/random/?#{animal.species}")
+  animal.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  animal.save!
+  puts "#{animal.name} [#{animal.species}]  created."
 end
 
 20.times do
