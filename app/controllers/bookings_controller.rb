@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
 private
 
-def policy_scope
+# def policy_scope
 
-end
+# end
 end
