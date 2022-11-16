@@ -5,17 +5,24 @@
   </div>
 </div>
 
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 <div class="container mt-5">
 <div class="cards">
 <% @animals.each do |animal|  %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + animal.species %> )">
+<%= link_to animal_path(animal), class: "links" do %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + animal.species %>)">
 <div class="card-details">
-<h1><%= link_to animal.name,  animal_path(animal), class: "links"%></h1>
+<h1><%= animal.name %></h1>
 <div class="card-info">
-  <p><%= animal.species %>:￥<%= animal.price %></p>
+  <h4>￥<%= animal.price %> per day</h4>
   </div>
  </div>
  </div>
-
+  <% end %>
 <% end %>
 </div>
