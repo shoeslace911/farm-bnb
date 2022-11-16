@@ -6,7 +6,8 @@ class AnimalsController < ApplicationController
     @markers = @animals.geocoded.map do |animal|
       {
         lat: animal.latitude,
-        lng: animal.longitude
+        lng: animal.longitude,
+        
       }
     end
   end
