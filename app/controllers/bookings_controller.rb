@@ -4,12 +4,15 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
-  def new
-
-  end
-
   def create
+    @bookings = policy_scope(Booking)
+    @bookings = Booking.new(booking_params)
+    @booking. =
+    if @bookings.save
+      redirect_to bookings_path(current_user)
+    else
 
+    end
   end
 
   def edit
@@ -22,7 +25,8 @@ class BookingsController < ApplicationController
 
 private
 
-def policy_scope
-
+def booking_params
+  params.require(Booking).permit( :start_date, :end_date )
 end
+
 end
