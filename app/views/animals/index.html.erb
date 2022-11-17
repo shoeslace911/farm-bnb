@@ -1,9 +1,16 @@
-<div class="container mt-2">
-<h4><%=@animals.count %>  Animals</h4>
+<div class="container mt-3">
+  <%= form_with url: animals_path, method: :get, class: "d-flex mt-4" do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an animal" %>
+    <%= submit_tag "Search", class: "btn btn-primary", style: "background-color: #309533; border-color: #309533" %>
+  <% end %>
 </div>
-
+<div class="container mt-3">
+  <h5><%=@animals.count %>  Animals</h5>
+</div>
 <div class="container mt-2">
-
   <div class="cards">
     <% @animals.each do |animal|  %>
       <%= link_to animal_path(animal), class: "links" do %>

@@ -2,7 +2,11 @@ class AnimalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @animals = policy_scope(Animal)
+    if params[:query].present?
+      @animals = policy_scope(Animal).search_by_species_and_name(params[:query])
+    else
+      @animals = policy_scope(Animal)
+    end
     @markers = @animals.geocoded.map do |animal|
       {
         lat: animal.latitude,
