@@ -22,12 +22,16 @@
   transition: 0.1s;
 }
 
-.nav-link:hover {
-  filter: brightness(80%);
-}
-
 .navbar-lewagon .farmbnb-logo-text {
   color: rgb(251, 251, 251);
   font-family: 'Rubik Dirt', cursive;
   letter-spacing: 1px;
+}
+
+.search-button {
+  transition: 0.5s;
+}
+
+.search-button:hover {
+  filter: brightness(80%);
 }
