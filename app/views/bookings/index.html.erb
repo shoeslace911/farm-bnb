@@ -3,17 +3,16 @@
     <h1><%= current_user.email.capitalize %>'s current bookings</h1>
   </div>
 </div>
-
 <div class="container mt-5">
   <div class="cards">
-  <% @bookings.each do |booking|  %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + booking.animal.species %> )" id = "status-<%= booking.status %>">
-    <div class="card-details">
-    <h1><%= link_to booking.animal.name,  animal_path(booking.animal), class: "links"%></h1>
-  <div class="card-info">
-    <h6>From:<%= booking.start_date %> To:<%= booking.end_date %></h6>
-    </div>
+    <% @bookings.each do |booking|  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + booking.animal.species %> )" id = "status-<%= booking.status %>">
+        <div class="card-details">
+          <h1><%= link_to booking.animal.name,  animal_path(booking.animal), class: "links"%></h1>
+          <div class="card-info">
+            <h6>From:<%= booking.start_date %> To:<%= booking.end_date %></h6>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  </div>
-  <% end %>
- </div>
