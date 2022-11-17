@@ -1,0 +1,18 @@
+<div class="container d-flex">
+  <div class="left-section m-4">
+    <h1 class="text-center"><strong><%= @animal.name %></strong></h1>
+    <h3 class="text-center"><%= @animal.species %></h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime explicabo non minima laboriosam quam ipsam, ab accusantium aliquid eaque? Alias quibusdam blanditiis incidunt, adipisci impedit ex nulla dolores magni accusantium?</p>
+    <div style="width: 100%; height: 300px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <div class="right-section mt-4">
+    <%= cl_image_tag @animal.photo.key, alt: "text", width: "300px", height: "300px" %>
+    <div class="mt-3">
+      <%= render "bookings/form" %>
+    </div>
+  </div>
+</div>
