@@ -19,14 +19,18 @@
   grid-template-columns: 1fr 1fr;
   width: 130%;
   margin-right: 3%;
+  grid-gap: 16px;
 }
 
 .card-category {
   background-size: cover;
   background-position: center;
+
   height: 350px;
   margin: 2%;
   position: relative;
+
+
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -49,7 +53,7 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .card-category:hover .card-details {
@@ -92,6 +96,14 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
