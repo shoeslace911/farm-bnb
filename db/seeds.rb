@@ -30,7 +30,7 @@ end
   users = User.all
   animals = ['Cow', 'Chicken', 'Pig', 'Sheep', 'Horse', 'Rabbit', 'Dog', 'Goat', 'Duck']
   animal_personality = ['quiet', 'lively']
-  animal_origin = ['as a gift from a friend', 'was bought because of the outstanding genetics that it has', 'I got it from a friend that is very experienced in raising healthy animals']
+  animal_origin = ['we got it as a gift from a friend', 'was bought because of the outstanding genetics that it has', 'I got it from a friend that is very experienced in raising healthy animals']
   addresses = [
     "913-14 Jogasawa, Mutsu shi, Aomori ken",
     "507-12 Uchikanna, Chita gun taketoyo cho, Aichi ken",
