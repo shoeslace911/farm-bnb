@@ -1,0 +1,15 @@
+<div class="container w-50">
+  <h1 class="mt-3 text-center">Register an animal</h1>
+  <div class="form-container">
+    <% if user_signed_in?  %>
+      <%= simple_form_for @animal do |f| %>
+        <%= f.input :species %>
+        <%= f.input :name %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :address %>
+        <%= f.submit "Create animal", class: "btn btn-primary w-100 mt-1" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
