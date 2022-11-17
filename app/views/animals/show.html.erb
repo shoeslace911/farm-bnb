@@ -2,7 +2,7 @@
   <div class="left-section m-4">
     <h1 class="text-center"><strong><%= @animal.name %></strong></h1>
     <h3 class="text-center"><%= @animal.species %></h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime explicabo non minima laboriosam quam ipsam, ab accusantium aliquid eaque? Alias quibusdam blanditiis incidunt, adipisci impedit ex nulla dolores magni accusantium?</p>
+    <p><%= @animal.description %></p>
     <div style="width: 100%; height: 300px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"

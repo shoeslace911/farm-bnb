@@ -3,7 +3,7 @@
   <p class="custom-banner-paragraph py-3">Rent cows, chickens, horses, pigs and much more!</p>
   <div class="custom-banner-buttons mt-4">
     <%= link_to 'Book animals', animals_path, class: 'farm-button' %>
-    <a class="farm-button" href="#">Rent out animals</a>
+    <%= link_to "Add an animal", new_animal_path, class:"farm-button"  %>
   </div>
   <div class="mt-3">
     <%= form_with url: animals_path, method: :get, class: "d-flex mt-3" do %>
