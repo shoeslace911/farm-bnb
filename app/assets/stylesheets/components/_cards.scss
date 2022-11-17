@@ -27,12 +27,13 @@
   position: relative;
 
 
+
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
 }
 
@@ -61,7 +62,7 @@
   cursor: pointer;
   border-radius: 8px;
   background-blend-mode: darken;
-  margin-left: -15%;
+  margin-left: -10%;
 }
 
 .links {

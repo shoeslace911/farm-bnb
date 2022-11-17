@@ -21,6 +21,7 @@ class AnimalsController < ApplicationController
       lng: @animal.longitude,
       info_window: render_to_string(partial: "info_window", locals: { animal: @animal })
     }]
+    @other_animals_from_owner = Animal.find(params[:id]).user.owned_animals
   end
 
   def new
