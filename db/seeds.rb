@@ -26,7 +26,7 @@ puts "Creating seeds for: User, Booking and Animal"
   User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 123456 )
 end
 
-20.times do
+30.times do
   users = User.all
   animals = ['Cow', 'Chicken', 'Pig', 'Sheep', 'Horse', 'Rabbit', 'Dog', 'Goat', 'Duck']
   animal_personality = ['quiet', 'lively']
