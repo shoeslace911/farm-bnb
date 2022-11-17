@@ -19,6 +19,11 @@
 .navbar-lewagon .nav-link {
   color: rgb(251, 251, 251);
   font-family: $body-font;
+  transition: 0.1s;
+}
+
+.nav-link:hover {
+  filter: brightness(80%);
 }
 
 .navbar-lewagon .farmbnb-logo-text {
