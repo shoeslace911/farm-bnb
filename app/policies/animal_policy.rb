@@ -17,4 +17,5 @@ class AnimalPolicy < ApplicationPolicy
   def create?
     true
   end
+
 end
