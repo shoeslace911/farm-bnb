@@ -1,19 +1,50 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80);">
-  <div class="container">
-    <h1><%= current_user.email.capitalize %>'s current bookings</h1>
-  </div>
-</div>
+<%= render "tabs" %>
+<div class="container mt-3">
 
-<div class="container mt-5">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade py-3 show active" id="bookings-tab-pane" role="tabpanel" aria-labelledby="bookings-tab" tabindex="0">
+  <h6><%= @bookings.count %> Bookings</h6>
   <div class="cards">
-  <% @bookings.each do |booking|  %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= 'https://source.unsplash.com/random/?' + booking.animal.species %> )" id = "status-<%= booking.status %>">
-    <div class="card-details">
-    <h1><%= link_to booking.animal.name,  animal_path(booking.animal), class: "links"%></h1>
-  <div class="card-info">
-    <h6>From:<%= booking.start_date %> To:<%= booking.end_date %></h6>
-    </div>
-  </div>
-  </div>
-  <% end %>
- </div>
+      <% current_user.bookings.each do |booking|  %>
+        <%= link_to animal_path(booking.animal), class: "links" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+          <h1><%= booking.animal.name %></h1>
+          <div class="card-details">
+            <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+          </div> <%# <info div %>
+          </div> <%# <category div %>
+   <% end %> <%# < card end %>
+  <% end %> <%# <link end %>
+  </div> <%# <card div %>
+  </div>  <%# <tab-pane div %>
+  <div class="tab-pane fade py-3" id="requests-tab-pane" role="tabpanel" aria-labelledby="requests-tab" tabindex="0">
+    <h6><%= current_user.bookings_as_owner.count %> animals currently out</h6>
+    <div class="cards">
+      <% current_user.bookings_as_owner.each do |booking|  %>
+        <%= link_to animal_path(booking.animal), class: "links" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+              <h1><%= booking.animal.name %></h1>
+            <div class="card-details">
+              <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+              <div class="d-flex">
+                <% if booking.pending? %>
+                    <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+                  <% end %> <%# <accept end %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                    <%= f.submit 'Reject', class: 'btn btn-light' %>
+                  <% end %> <%# reject end %>
+                <% end %> <%# if statement form end %>
+              </div>  <%# < dflex div %>
+            </div> <%# <info div %>
+            </div> <%# <category div %>
+             <% end %> <%# < card end %>
+              <% end %> <%# <link end %>
+    </div> <%# <card div %>
+
+  </div> <%# <tab-pane div %>
+  </div> <%# <tab-content div %>
+
+</div> <%# container div %>
