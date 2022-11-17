@@ -16,7 +16,11 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
     @booking = Booking.new
     authorize @animal
-    @markers = [@animal.geocode.first, @animal.geocode.last]
+    @markers = [{
+      lat: @animal.latitude,
+      lng: @animal.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { animal: @animal })
+    }]
   end
 
   def new
