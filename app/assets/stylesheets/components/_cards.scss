@@ -1,25 +1,51 @@
+// animations
+@keyframes to-left {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    margin-left: 5%;
+  }
+}
+
 .container {
   display: flex;
 }
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 130%;
+  margin-right: 3%;
   grid-gap: 16px;
 }
+
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 250px;
-  width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  height: 350px;
+  margin: 2%;
+  position: relative;
+
+
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 10%;
+  opacity: 0;
+  transition: 0.3s;
+  filter: brightness(100%);
 }
 
 #map {
@@ -30,27 +56,23 @@
   margin-left: 8px;
 }
 
-.card-info {
-  opacity: 0.7;
-}
-.card-category:hover .card-info {
+.card-category:hover .card-details {
   opacity: 1;
-  color: #ffb703;
-  transition: 0.7s;
+  left: 15px;
 }
+
 .card-category:hover {
   cursor: pointer;
-  transform: scale(1.3);
-  transition: 0.7s;
   border-radius: 8px;
+  background-blend-mode: darken;
+  margin-left: -15%;
 }
-
-
 
 .links {
-  color:#FFFFFF;
+  color: #FFFFFF;
   text-decoration: none;
 }
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -76,6 +98,7 @@
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr;
+
   }
 }
 
