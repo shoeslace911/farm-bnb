@@ -5,4 +5,13 @@
     <%= link_to 'Book animals', animals_path, class: 'farm-button' %>
     <%= link_to "Add an animal", new_animal_path, class:"farm-button"  %>
   </div>
+  <div class="mt-3">
+    <%= form_with url: animals_path, method: :get, class: "d-flex mt-3" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an animal" %>
+      <%= submit_tag "Search", class: "btn btn-primary", style: "background-color: #309533; border-color: #309533" %>
+    <% end %>
+  </div>
 </div>
