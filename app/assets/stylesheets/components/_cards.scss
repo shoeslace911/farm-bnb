@@ -33,13 +33,6 @@
   transition: 0.3s;
 }
 
-.card-details {
-  position: absolute;
-  bottom: 10%;
-  opacity: 0;
-  transition: 0.3s;
-  filter: brightness(100%);
-}
 
 #map {
   width: 100%;
@@ -52,6 +45,20 @@
 .card-category:hover .card-details {
   opacity: 1;
   left: 15px;
+}
+
+.animal-name {
+  position: absolute;
+  left: 3%;
+  bottom: 46%;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 10%;
+  opacity: 0;
+  transition: 0.3s;
+  filter: brightness(100%);
 }
 
 .card-category:hover {
