@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking.animal = @animal
     @booking.user = current_user
     @booking.status = 2
+    @booking.price = price_sum(@booking.start_date, @booking.end_date).to_i
     authorize @booking
     if @booking.save
       redirect_to bookings_path
@@ -19,7 +20,8 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if @booking.update
+    authorize @booking
+    if @booking.update(booking_params)
       redirect_to bookings_path(@booking)
     else
       render "index", status: :unprocessable_entity
@@ -29,7 +31,11 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date)
+    params.require(:booking).permit(:status, :start_date, :end_date, :name)
   end
-
+  
+  def price_sum(start_date, end_date)
+    days = (end_date - start_date)
+    days * @animal.price
+  end
 end

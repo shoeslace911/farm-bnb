@@ -8,19 +8,22 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+    <div class="contact-container py-5 my-3">
+      <h3 class="border-bottom border-primary mb-4 pb-1" >Contact:</h3>
+      <p><strong>Owner name: </strong><%= @user.name %></p>
+      <p><strong>Email: </strong><%= @user.email %></p>
+    </div>
   </div>
   <div class="right-section my-4">
     <%= cl_image_tag @animal.photo.key, alt: "text", class: "animal-show-image", width: "300px", height: "300px" %>
-    <h2 class="mt-3">Contact:</h2>
-    <p><%= @user.email %></p>
     <div class="mt-3">
       <p><strong><%= render "bookings/form" %></p>
       </strong>
     </div>
   </div>
 </div>
-<div class="container d-flex flex-wrap mt-4">
-  <h3>Other animals from this farmer</h3>
+<div class="container d-flex flex-wrap mt-1">
+  <h3>Other animals from <%= @user.name %></h3>
   <%# maybe do a carrosel thing below%>
   <div class="cards" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
     <% @other_animals_from_owner.each do |animal|  %>

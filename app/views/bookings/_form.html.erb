@@ -1,5 +1,9 @@
-<%= simple_form_for [@animal, @booking] do |f| %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.input :end_date, html5: true %>
-  <%= f.submit class: "btn btn-primary", style: "background-color: #309533; border-color: #309533" %>
-<% end %>
+<div>
+  <h3>Price: </h3>
+  <h4>¥<%= @animal.price %> /per day</h4>
+  <%= simple_form_for [@animal, @booking] do |f| %>
+    <%= f.input :start_date, html5: true %>
+    <%= f.input :end_date, html5: true %>
+    <%= f.submit class: "btn btn-primary", style: "background-color: #309533; border-color: #309533" %>
+  <% end %>
+</div>
