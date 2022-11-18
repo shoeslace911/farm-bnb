@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if @booking.update
+    authorize @booking
+    if @booking.update(booking_params)
       redirect_to bookings_path(@booking)
     else
       render "index", status: :unprocessable_entity
@@ -31,5 +32,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:status, :start_date, :end_date)
   end
-
 end
