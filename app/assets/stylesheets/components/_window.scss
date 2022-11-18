@@ -1,0 +1,75 @@
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  margin: 0;
+  background-color: transparent !important;
+}
+
+.window-category {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 250px;
+  margin: 0%;
+  padding: 0%;
+  position: relative;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.info-animal-name {
+  position: absolute;
+  left: 3%;
+  bottom: 60%;
+}
+
+.window-details {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  color: white;
+}
+
+// .links {
+//   color: #FFFFFF;
+//   text-decoration: none;
+// }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .windows {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .windows {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .windows {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .windows {
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .windows {
+    grid-template-columns: 1fr 1fr;
+  }
+}

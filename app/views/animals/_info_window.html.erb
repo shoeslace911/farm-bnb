@@ -1,4 +1,9 @@
-<div class="card">
-<h2><%= animal.name %></h2>
-<h2>￥<%= animal.price %></h2>
-</div>
+<%= link_to animal_path(animal), class: "links" do%>
+  <div class="window-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url(<%= cl_image_path animal.photo.key %>)">
+    <h3 class="info-animal-name"><%= animal.name %></h3>
+      <div class="window-details">
+        <h5><%= animal.species %></h5>
+        <h6><%= number_to_currency(animal.price, {unit: '¥', precision: 0}) %> per day</h6>
+      </div>
+  </div>
+<% end %>
