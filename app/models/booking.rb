@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
   validate :renter_is_not_owner
 
   def number_of_days
-    (start_date - end_date).to_i
+    (end_date - start_date).to_i
   end
 
   def price
