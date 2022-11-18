@@ -81,6 +81,32 @@ end
   )
 end
 
+# 40.times do
+#   animal = Animal.all.sample
+#   reviewer = User.where.not(id: animal.user).sample
+#   good_reviews = [
+#     'is very calm, really nice to have around.',
+#     'was such a funny animal, always running around and giving joy to everyone.'
+#     'was a '
+#   ]
+#   bad_reviews = [
+#     'was destroying everything.',
+#     'never renting this one again.',
+#     'too grumpy'
+#   ]
+#   review = Review.new(
+#     rating: rand(1..5),
+#     animal: animal,
+#     user: reviewer
+#   )
+#   if review.rating < 3
+#     review.content = "#{animal.name} #{good_reviews.sample}"
+#   else
+#     review.content = "#{animal.name} #{bad_reviews.sample}"
+#   end
+#   Review.save!
+# end
+
 puts "Created #{User.count} users."
 puts "Created #{Animal.count} animals."
 puts "Created #{Booking.count} bookings."
