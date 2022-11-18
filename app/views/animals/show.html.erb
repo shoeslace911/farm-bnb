@@ -31,7 +31,7 @@
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path animal.photo.key %>)">
           <div class="card-details">
             <h1><%= animal.species %></h1>
-            <h4>￥<%= animal.price %> per day</h4>
+            <h4><%= number_to_currency(animal.price, {unit: '¥', precision: 0}) %> per day</h4>
           </div>
         </div>
       <% end %>
