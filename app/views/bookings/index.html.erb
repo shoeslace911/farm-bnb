@@ -6,7 +6,14 @@
       <div class="booking_cards">
         <% current_user.bookings.pending.each do |booking|  %>
           <%= link_to animal_path(booking.animal), class: "links" do %>
-            <%= render(partial: "booking_cards", locals: { booking: booking }) %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+              <h1><%= booking.animal.name %></h1>
+              <div class="card-details">
+                <h4>Until: <%= booking.end_date %></h4>
+                <h4><%= number_to_currency(booking.price, {unit: '¥', precision: 0}) %></h4>
+              </div>
+              <%# <info div %>
+            </div>
             <%# <category div %>
           <% end %> <%# < card end %>
         <% end %> <%# <link end %>
@@ -18,6 +25,7 @@
               <h1><%= booking.animal.name %></h1>
               <div class="card-details">
                 <h4>Until: <%= booking.end_date %></h4>
+                <h4><%= number_to_currency(booking.price, {unit: '¥', precision: 0}) %></h4>
               </div>
               <%# <info div %>
             </div>
@@ -33,6 +41,8 @@
               <h1><%= booking.animal.name %></h1>
               <div class="card-details">
                 <h4>Until: <%= booking.end_date %></h4>
+                <h4><%= number_to_currency(booking.price, {unit: '¥', precision: 0}) %></h4>
+                <%=booking.price%>
               </div>
               <%# <info div %>
             </div>
@@ -55,6 +65,7 @@
             <% end %> <%# < card end %>
             <div class="card-details">
               <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+              <h4><%= number_to_currency(booking.price, {unit: '¥', precision: 0}, :negative_format => '- %n %u') %></h4>
               <div class="d-flex">
                 <% if booking.pending? %>
                   <%= simple_form_for booking do |f| %>
@@ -84,8 +95,9 @@
             <% end %> <%# < card end %>
             <div class="card-details">
               <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+              <h4><%= number_to_currency(booking.price, {unit: '¥', precision: 0}) %></h4>
               <div class="d-flex">
-                   <% if booking.pending? %>
+                <% if booking.pending? %>
                   <%= simple_form_for booking do |f| %>
                     <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
                     <%= f.submit 'Accept', class: 'btn btn-info' %>
@@ -93,7 +105,7 @@
                   <%= simple_form_for booking do |f| %>
                     <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
                     <%= f.submit 'Reject', class: 'btn btn-light' %>
-                   <% end %><%# reject end %>
+                  <% end %><%# reject end %>
                 <% end %><%# if statement form end %>
               </div>
               <%# < dflex div %>

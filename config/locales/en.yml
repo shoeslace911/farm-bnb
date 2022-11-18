@@ -28,6 +28,10 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
+  number:
+    currency:
+      format:
+        negative_format: '-%n %u'
 
 en:
   hello: "Hello world"
