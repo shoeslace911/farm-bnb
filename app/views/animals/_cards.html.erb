@@ -1,0 +1,10 @@
+<%= link_to animal_path(animal), class: "links" do%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= animal.photo.key ? cl_image_path(animal.photo.key) : image_path("no_image.jpg") %>)">
+    <h1 class="animal-name"><%= animal.name %></h1>
+    <div class="card-details">
+      <p>the</p>
+      <h3><%= animal.species %></h3>
+      <h4>￥<%= animal.price %> per day</h4>
+    </div>
+  </div>
+<% end %>
