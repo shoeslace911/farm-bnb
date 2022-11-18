@@ -3,14 +3,29 @@
 <div class="container mt-3">
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade py-3 show active" id="bookings-tab-pane" role="tabpanel" aria-labelledby="bookings-tab" tabindex="0">
-      <h6><%= @bookings.count %> Bookings</h6>
+      <h6><%= @bookings.pending.count %> pending animals</h6>
       <div class="booking_cards">
-        <% current_user.bookings.each do |booking|  %>
+        <% current_user.bookings.pending.each do |booking|  %>
           <%= link_to animal_path(booking.animal), class: "links" do %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
               <h1><%= booking.animal.name %></h1>
               <div class="card-details">
-                <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+                <h4>Until: <%= booking.end_date %></h4>
+              </div>
+              <%# <info div %>
+            </div>
+            <%# <category div %>
+          <% end %> <%# < card end %>
+        <% end %> <%# <link end %>
+      </div>
+      <h6><%= @bookings.accepted.count %> current animals</h6>
+      <div class="booking_cards">
+        <% current_user.bookings.accepted.each do |booking|  %>
+          <%= link_to animal_path(booking.animal), class: "links" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+              <h1><%= booking.animal.name %></h1>
+              <div class="card-details">
+                <h4>Until: <%= booking.end_date %></h4>
               </div>
               <%# <info div %>
             </div>
@@ -19,12 +34,57 @@
         <% end %> <%# <link end %>
       </div>
       <%# <card div %>
+      <div class="booking_cards">
+        <h6><%= @bookings.rejected.count %> rejected bookings </h6>
+        <% current_user.bookings.rejected.each do |booking|  %>
+          <%= link_to animal_path(booking.animal), class: "links" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+              <h1><%= booking.animal.name %></h1>
+              <div class="card-details">
+                <h4>Until: <%= booking.end_date %></h4>
+              </div>
+              <%# <info div %>
+            </div>
+            <%# <category div %>
+          <% end %> <%# < card end %>
+        <% end %> <%# <link end %>
+      </div>
     </div>
     <%# <tab-pane div %>
     <div class="tab-pane fade py-3" id="requests-tab-pane" role="tabpanel" aria-labelledby="requests-tab" tabindex="0">
-      <h6><%= current_user.bookings_as_owner.count %> animals currently out</h6>
+      <h6><%= current_user.bookings_as_owner.pending.count %> animals currently pending</h6>
       <div class="booking_cards">
-        <% current_user.bookings_as_owner.each do |booking|  %>
+        <% current_user.bookings_as_owner.pending.each do |booking|  %>
+          <div class="card-link">
+            <%= link_to animal_path(booking.animal), class: "links" do %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
+                <h1><%= booking.animal.name %></h1>
+                <%# <details div %>
+              </div>
+              <%# <category div %>
+            <% end %> <%# < card end %>
+            <div class="card-details">
+              <h4>From:<%= booking.start_date %> To:<%= booking.end_date %></h4>
+              <div class="d-flex">
+              <% if booking.pending? %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                  <%= f.submit 'Accept', class: 'btn btn-info' %>
+                <% end %> <%# <accept end %>
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                  <%= f.submit 'Reject', class: 'btn btn-light' %>
+                <% end %> <%# reject end %>
+                <% end %><%# if statement form end %>
+              </div>
+              <%# < dflex div %>
+            </div>
+          </div>
+        <% end %> <%# <link end %>
+        </div>
+        <h6><%= current_user.bookings_as_owner.accepted.count %> currently out</h6>
+        <div class="booking_cards">
+        <% current_user.bookings_as_owner.accepted.each do |booking|  %>
           <div class="card-link">
             <%= link_to animal_path(booking.animal), class: "links" do %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.animal.photo.key  %> )" id = "status-<%= booking.status %>">
@@ -52,6 +112,7 @@
           </div>
         <% end %> <%# <link end %>
       </div>
+
     </div>
     <%# <card div %>
   </div>
