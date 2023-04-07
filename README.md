@@ -10,3 +10,5 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 </ul>
 <p><strong>The app this website was hosted on, Heroku became paid and we refuse to pay so they took it down without mercy. I will try and explain it here in full detail</strong></p>
 <h3>FarmBnB is an AirBnB clone but instead of renting rooms, you can rent... <strong>Farm Animals!</strong></h3>
+<h2>Landing Page</h2>
+![Landing-page](https://user-images.githubusercontent.com/98511262/230529910-9c4c0c9e-84ff-48fa-b7ec-92f6a9504fbd.png)
