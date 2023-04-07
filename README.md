@@ -1,6 +1,8 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 <h1>FARMBNB</h1>
+<h2>http://farm-bnb.herokuapp.com/</h2>
+<p>by March 4 2023, the app is down</p>
 <h2>This was a group project made by these legends:</h2>
 <ul>
   <li>Will Hargrave - Product Manager(and coder) - https://github.com/Willhargrave</li>
