@@ -1,8 +1,7 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 <h1>FARMBNB</h1>
-<h2>http://farm-bnb.herokuapp.com/</h2>
-<p>by March 4 2023, the app is down</p>
+[<h2>http://farm-bnb.herokuapp.com/</h2>](https://farm-bnb.herokuapp.com/)
 <h2>This was a group project made by these legends:</h2>
 <ul>
   <li>Will Hargrave - Product Manager(and coder) - https://github.com/Willhargrave</li>
@@ -11,7 +10,6 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
   <li>Sho Fujiwara - Backend Dev(me) - https://github.com/shoeslace911</li>
 </ul>
 <h2>https://github.com/moledoPatrik/farm-bnb - <b>Original</b> - This build is my own build which may differ from the final version -</h2>
-<p><strong>The app this website was hosted on Heroku became a paid service. We refused to pay so they took it down without mercy. I will try and explain it here in full detail</strong></p>
 <h3>FarmBnB is an AirBnB clone but instead of renting rooms, you can rent... <strong>Farm Animals!</strong></h3>
 <h2>Landing Page</h2>
 
@@ -58,7 +56,4 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 ![tonys-page](https://user-images.githubusercontent.com/98511262/230533912-196db725-fc59-4d01-a8a9-c6b75b2150c5.png)
 
 <h2>And then there he is..</h2>
-
-<h2>Final notes</h2>
-<p>It's a real shame that this website couldn't be up because it's really cool and am super proud considering it's my first fullstack app with a team which couldn't be any cooler</p>
 
